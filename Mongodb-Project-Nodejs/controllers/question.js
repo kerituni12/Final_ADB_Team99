@@ -97,7 +97,8 @@ function post_editquestion (req, res) {
       db.collection('Question').updateOne({ _id: id },{ $set: question })
     }
     // res.send('ok');
-    res.redirect('/edit/'+ test_id);
+    // res.redirect('/edit/'+ test_id);
+    res.redirect('/listtest');
   });
   
   // })
