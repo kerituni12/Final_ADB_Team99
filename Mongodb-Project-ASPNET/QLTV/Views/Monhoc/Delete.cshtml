@@ -1,0 +1,41 @@
+﻿@model QLTV.Models.Monhoc
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div>
+    <h4>Môn học</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MonhocId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MonhocId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MaMH)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MaMH)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TenMH)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TenMH)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.KhoaQL)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.KhoaQL)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-action="Index">Quay lại</a>
+    </form>
+</div>

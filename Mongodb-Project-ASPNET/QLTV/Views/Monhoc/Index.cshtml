@@ -1,0 +1,54 @@
+﻿@model IEnumerable<QLTV.Models.Monhoc>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Danh sách sinh viên</h2>
+
+<p>
+    <a asp-action="Create">Thêm mới</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                Mã môn học
+            </th>
+            <th>
+                Tên môn học
+            </th>
+            <th>
+                Khoa quản lý
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MonhocId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MaMH)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TenMH)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.KhoaQL)
+                </td>
+                <td>
+                    @Html.ActionLink("Sữa", "Edit", new { id = item.MonhocId }) |
+                    @Html.ActionLink("Chi tiết", "Details", new { id = item.MonhocId }) |
+                    @Html.ActionLink("Xóa", "Delete", new { id = item.MonhocId })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,37 @@
+﻿@model QLTV.Models.Khoa
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Xóa</h2>
+
+<h3>Bạn có chắc muốn xóa khoa này không?</h3>
+<div>
+    <h4>Customer</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.KhoaId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.KhoaId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.KhoaName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.KhoaName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-action="Index">Quay lại dánh sách</a>
+    </form>
+</div>

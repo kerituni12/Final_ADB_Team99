@@ -1,0 +1,36 @@
+﻿@model QLTV.Models.Khoa
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Chi tiết</h2>
+
+<div>
+    <h4>Khoa</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.KhoaId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.KhoaId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.KhoaName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.KhoaName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Sữa", "Edit", new { id = Model.KhoaId }) |
+    <a asp-action="Index">Quay lại danh sách</a>
+</div>

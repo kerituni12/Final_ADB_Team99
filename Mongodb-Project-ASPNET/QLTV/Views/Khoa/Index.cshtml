@@ -1,0 +1,47 @@
+﻿@model IEnumerable<QLTV.Models.Khoa>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Quản lý khoa</h1>
+
+<p>
+    <a asp-action="Create">Thêm khoa</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                Tên khoa
+            </th>
+            <th>
+                Địa chỉ
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.KhoaId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.KhoaName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address)
+                </td>
+                <td>
+                    @Html.ActionLink("Sữa", "Edit", new { id = item.KhoaId }) |
+                    @Html.ActionLink("Chi tiết", "Details", new { id = item.KhoaId }) |
+                    @Html.ActionLink("Xóa", "Delete", new { id = item.KhoaId })
+                </td>
+            </tr>
+        }
+</table>
