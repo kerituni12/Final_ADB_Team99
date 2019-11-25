@@ -33,9 +33,9 @@ function nextSection() {
       response.forEach(function (quizz, index) {
         $('#table').append(`
             <tr>
-              <td span=2> <b>Question:</b> ${ quizz.text } </td>
+              <td span=2> <b>Question:</b> ${ quizz.details ? quizz.details.name : '' } </td>
             </tr>`)
-        quizz.answers.forEach(function (answer, index) {
+        quizz.details.answers.forEach(function (answer, index) {
           $('#table').append(`<tr>
             <td>Option ${index}: ${answer }<td><input class='radio' type="radio" name="${quizz._id }" value="${arr[index] }">                
         </tr>

@@ -16,7 +16,7 @@ function create (req, res) {
         return;
       }
       await docs.forEach(function (doc) {
-        if (doc.correct_answer == results[i]) {
+        if (doc.details.correct_answer == results[i]) {
           ++score;
         }
         

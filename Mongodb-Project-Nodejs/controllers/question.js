@@ -12,20 +12,15 @@ connection.then(() => {
   
       req.body.question.forEach((q, i) => {
         var question = new Question();
-        question.text = q
-        question.answers = [req.body.one[i], req.body.two[i], req.body.three[i], req.body.four[i]]
-        question.correct_answer = req.body.correct ? req.body.correct[i] : null
+        question.details = {text: req.body.question[i], answers : [req.body.one[i], req.body.two[i], req.body.three[i], req.body.four[i]], correct_answer : req.body.correct ? req.body.correct[i] : null}
         question.test_id = new ObjectId(test_id)
         reqArray.push(question)
       })
   
-    } else {
-  
-      var question = new Question();
-      question.text = req.body.question
-      question.answers = [req.body.one, req.body.two, req.body.three, req.body.four]
-      question.correct_answer = req.body.correct ? req.body.correct[0] : null
+    } else {  
+      var question = new Question();      
       question.test_id = new ObjectId(test_id)
+      question.details = {text: req.body.question, answers: [req.body.one, req.body.two, req.body.three, req.body.four], correct_answer: req.body.correct ? req.body.correct[0] : null}
       reqArray.push(question)  
     }
   
@@ -74,9 +69,7 @@ function post_editquestion (req, res) {
   
       req.body.question.forEach((q, i) => {
         var question = new Question();
-        question.text = q
-        question.answers = [req.body.one[i], req.body.two[i], req.body.three[i], req.body.four[i]]
-        question.correct_answer = req.body.correct ? req.body.correct[i] : null
+        question.details = {text: req.body.question[i], answers : [req.body.one[i], req.body.two[i], req.body.three[i], req.body.four[i]], correct_answer : req.body.correct ? req.body.correct[i] : null}
         question.test_id = new ObjectId(test_id)
 
         var id = new ObjectId(req.body.id[i])
@@ -87,9 +80,7 @@ function post_editquestion (req, res) {
     } else {
   
       var question = new Question();
-      question.text = req.body.question
-      question.answers = [req.body.one, req.body.two, req.body.three, req.body.four]
-      question.correct_answer = req.body.correct ? req.body.correct[0] : null
+      question.details = {text: req.body.question, answers: [req.body.one, req.body.two, req.body.three, req.body.four], correct_answer: req.body.correct ? req.body.correct[0] : null}
       question.test_id = new ObjectId(test_id)
      
       var id = new ObjectId(req.body.id);
