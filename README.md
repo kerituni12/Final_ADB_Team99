@@ -4,6 +4,8 @@ Final ADB Team 99 - MongoDB chủ đề 2 Quizz App
 
 #25/11/2019 Updated nested document
 
+#27/11/2019 Updated word
+
 Thành viên :
 
 Nguyễn Văn Hiếu			43.01.104.049
